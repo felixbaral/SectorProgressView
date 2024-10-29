@@ -1,15 +1,7 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        google()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
-    }
+plugins {
+    id 'com.android.library'
 }
 
-apply plugin: 'com.android.library'
 
 version = "2.0.1"
 android {
@@ -29,13 +21,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    namespace 'com.timqi.sectorprogressview'
 }
 
 def siteUrl = "https://github.com/timqi/SectorProgressView"
 def gitUrl = "https://github.com/timqi/SectorProgressView.git"
 group = "com.timqi.sectorprogressview"
 
-
+/*
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
@@ -52,5 +46,6 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
+*/
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
